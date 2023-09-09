@@ -1,40 +1,39 @@
 // TODO: Write code to define and export the Employee class
 class Employee {
-  constructor(name, id, email, role) {
+  constructor(name, email) {
     this.name = name;
-    this.id = id;
+    this.id = 0;
     this.email = email;
-    this.role = role;
+  }
+
+  getName() {
+    if (this.name === "") {
+      return this.name;
+    } else {
+      console.log("Please enter a valid name!");
+    }
+  }
+
+  getId() {
+    if (this.id === "") {
+      return console.log("Please enter a valid number");
+    }
+
+    if (this.id > 0 || this.id < 100) {
+      return;
+    }
+  }
+
+  getEmail() {
+    if (this.email === "") {
+      console.log(this.email);
+      return this.email;
+    }
+  }
+
+  getRole() {
+    return Employee.getName(), Employee.getId(), Employee.getEmail();
   }
 }
-
-getName(){
-  if (this.name === "") {
-    return this.name;
-  } else {
-    console.log("Please enter a valid name!");
-  }
-};
-
-getId(){
-  if (this.id === "") {
-    return console.log("Please enter a valid number");
-  }
-
-  if (this.id > 0 || this.id < 100) {
-    return;
-  }
-};
-// getEmail()
-// {
-
-// }
-
-// getRole(){
-
-// }
-
-Employee.getName();
-Employee.getId();
 
 module.exports = Employee;

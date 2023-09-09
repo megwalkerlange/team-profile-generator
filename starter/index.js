@@ -12,14 +12,14 @@ const render = require("./src/page-template.js");
 
 // TODO: Write Code to gather information about the development team members, and render the HTML file.
 
-const questionsManager = [
+const questions = [
   {
-    name: "name",
+    name: "nameManager",
     message: "Please type the name of manager",
   },
 
   {
-    name: "ID",
+    name: "IDManager",
 
     message: "Please type manager's ID",
   },
@@ -31,19 +31,17 @@ const questionsManager = [
     name: "office",
     message: "Please type the room number of manager's office",
   },
-  {
-    type: "list",
-    message: "Please select a job role for next employee",
-    choices: ["Engineer", "Intern", "Finish building team"],
-  },
-];
 
-const questionsEngineer = [
   {
-    name: "name",
+    name: "nameEngineer",
     message: "Please type the name of engineer",
   },
-  { name: "e-mail", message: "Please type engineer's e-mail address" },
+  {
+    name: "IDEngineer",
+
+    message: "Please type Engineer's ID",
+  },
+  { name: "e-mailEngineer", message: "Please type engineer's e-mail address" },
   {
     name: "ID",
 
@@ -53,14 +51,6 @@ const questionsEngineer = [
     name: "github",
     message: "Please type engineers gitHib username",
   },
-  {
-    type: "list",
-    message: "Please select a job role for employee",
-    choices: ["Engineer", "Intern", "Finish building team"],
-  },
-];
-
-const questionsIntern = [
   {
     name: "name",
     message: "Please type the name of intern",
@@ -77,15 +67,14 @@ const questionsIntern = [
   },
   {
     type: "list",
-    message: "Please select a job role for employee",
+    name: "nextChoice",
+    message: "Please select a job role for next employee",
     choices: ["Engineer", "Intern", "Finish building team"],
   },
 ];
 
 function init() {
-  inquirer
-    .prompt(questionsManager, questionsEngineer, questionsIntern)
-    .then((answers) => console.log("Creating README.md File..."));
+  inquirer.prompt(questions).then((answers) => console.log("Thank you"));
 }
 
 init();
