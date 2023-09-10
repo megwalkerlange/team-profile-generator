@@ -36,4 +36,8 @@ class Employee {
   }
 }
 
+const newEmployee = new Employee(require("../index"({ ...answers })));
+
+console.log(newEmployee);
+
 module.exports = Employee;

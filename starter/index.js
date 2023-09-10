@@ -24,7 +24,7 @@ const questions = [
     message: "Please type manager's ID",
   },
   {
-    name: "e-mail",
+    name: "e-mailManager",
     message: "Please type manager's e-mail address",
   },
   {
@@ -43,7 +43,7 @@ const questions = [
   },
   { name: "e-mailEngineer", message: "Please type engineer's e-mail address" },
   {
-    name: "ID",
+    name: "IDEngineer",
 
     message: "Please type engineer's ID",
   },
@@ -52,12 +52,12 @@ const questions = [
     message: "Please type engineers gitHib username",
   },
   {
-    name: "name",
+    name: "nameIntern",
     message: "Please type the name of intern",
   },
-  { name: "e-mail", message: "Please type intern's e-mail address" },
+  { name: "e-mailIntern", message: "Please type intern's e-mail address" },
   {
-    name: "ID",
+    name: "IDIntern",
 
     message: "Please type intern's ID",
   },
@@ -73,8 +73,24 @@ const questions = [
   },
 ];
 
+function writeToFile(fileName, data) {
+  return fs.writeFileSync(path.join(process.cwd(), outputPath), data);
+}
+
 function init() {
-  inquirer.prompt(questions).then((answers) => console.log("Thank you"));
+  inquirer.prompt(questions).then((answers) => {
+    if (questions.choices === "Finish Building Team") {
+      console.log("Thank You!");
+      writeToFile("./output/index.html", render({ ...answers }));
+    }
+    if (questions.choices !== "Finish Building Team") {
+      inquirer.prompt(questions).then((answers) => {
+        if ((choices = "Finish Building Team")) {
+          console.log("Thank You!");
+        }
+      });
+    }
+  });
 }
 
 init();
