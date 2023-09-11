@@ -73,6 +73,7 @@
     "imurmurhash": "^0.1.4",
     "inflight": "^1.0.6",
     "inherits": "^2.0.4",
+    "inquirer": "^9.2.11",
     "is-arrayish": "^0.2.1",
     "is-core-module": "^2.13.0",
     "is-fullwidth-code-point": "^3.0.0",
@@ -193,7 +194,8 @@
     "yocto-queue": "^0.1.0"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest --verbose"
+
   },
   "keywords": [],
   "author": "",

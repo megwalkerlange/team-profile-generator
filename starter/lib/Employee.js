@@ -2,45 +2,40 @@
 const inquirer = require("inquirer");
 
 class Employee {
-  constructor(name, email) {
+  constructor(name, id, email) {
     this.name = name;
     this.id = id;
     this.email = email;
   }
 
   getName() {
-    return inquirer
-      .prompt([
-        {
-          name: "name",
-          message: "Please type the name of Employee",
-        },
-      ])
-      .then((answers) => {
-        this.name = answers.name;
-      });
+    if (this.name !== "") {
+      return this.name;
+    } else {
+      console.log("Please enter a valid name!");
+    }
   }
 
   getId() {
-    const idValue = 100;
-    const newEmployee = new Employee("Bill", idValue);
-    return;
+    if (this.id > 0) {
+      return this.id;
+    } else {
+      console.log("Please enter a valid ID!");
+    }
   }
 
   getEmail() {
-    if (this.email === "") {
-      console.log(this.email);
+    if (this.email !== "") {
       return this.email;
+    } else {
+      console.log("Please enter a valid email!");
     }
   }
 
   getRole() {
-    return Employee.getName(), Employee.getId(), Employee.getEmail();
+    this.role = "Employee";
+    return this.role;
   }
 }
-
-// const newEmployee = new Employee(require("../index"({ ...answers })));
-
-// console.log(newEmployee);
 
 module.exports = Employee;

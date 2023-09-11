@@ -81,7 +81,7 @@ function init() {
   inquirer.prompt(questions).then((answers) => {
     if (questions.choices === "Finish Building Team") {
       console.log("Thank You!");
-      writeToFile("./output/index.html", render({ ...answers }));
+      writeToFile("./output/team.html", render({ ...answers }));
     }
     if (questions.choices !== "Finish Building Team") {
       inquirer.prompt(questions).then((answers) => {
